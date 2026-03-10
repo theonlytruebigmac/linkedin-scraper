@@ -115,4 +115,4 @@ No data leaves your machine. All contacts are stored in `chrome.storage.local`.
 
 ## License
 
-MIT
+[MIT](./LICENSE) — Copyright (c) 2026 soybigmac
