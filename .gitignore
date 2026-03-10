@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V500
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if any tooling is added later)
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+.env.local

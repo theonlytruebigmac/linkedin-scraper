@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinkedOut</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="popup-brand">
+        <img src="../icons/icon-48.png" alt="" class="popup-logo">
+        <div>
+          <h1 class="popup-title">LinkedOut</h1>
+          <p class="popup-subtitle">LinkedIn Scraper Tool</p>
+        </div>
+      </div>
+      <div id="statusBadge" class="status-badge status-badge--unknown">
+        <span class="status-dot"></span>
+        <span id="statusText" class="status-text">…</span>
+      </div>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="totalContacts">0</span>
+        <span class="stat-label">Contacts</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="totalCompanies">0</span>
+        <span class="stat-label">Companies</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="sessionCount">0</span>
+        <span class="stat-label">Session</span>
+      </div>
+    </div>
+
+    <!-- Page Context -->
+    <div id="pageInfo" class="page-info" style="display:none;">
+      <span id="pageInfoText" class="page-info-text"></span>
+    </div>
+
+    <!-- Capture Button -->
+    <div class="capture-section">
+      <button id="btnCapture" class="btn btn-primary btn-full btn-capture" disabled>
+        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+        <span id="captureLabel">Capture People</span>
+      </button>
+      <p id="captureHint" class="hint"></p>
+
+      <!-- Progress Tracker (hidden by default) -->
+      <div id="progressTracker" class="progress-tracker" style="display:none;">
+        <div class="progress-header">
+          <span id="progressPhase" class="progress-phase">Scanning…</span>
+          <span id="progressPercent" class="progress-percent"></span>
+        </div>
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <p id="progressDetail" class="progress-detail"></p>
+      </div>
+    </div>
+
+    <!-- Search LinkedIn -->
+    <div class="search-section">
+      <h2 class="section-title">Search LinkedIn</h2>
+      <div class="search-row">
+        <input type="text" id="searchInput" class="input" placeholder="Company, job title, keywords...">
+        <button id="btnSearch" class="btn-icon-only" title="Search on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Recent Contacts -->
+    <div class="recent-section">
+      <h2 class="section-title">Recent Contacts</h2>
+      <div id="recentList" class="recent-list">
+        <p class="empty-state">No contacts yet</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <button id="btnExport" class="btn-link" disabled>Copy JSON</button>
+      <button id="btnClear" class="btn-link btn-link--danger" disabled>Clear All</button>
+    </footer>
+  </div>
+
+  <script src="../utils/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
